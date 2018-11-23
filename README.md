@@ -1,5 +1,7 @@
 # Facebook Instant Games SDK (FBInstant) externs for Haxe
 
+[![Build Status](https://travis-ci.org/nadako/hxfbinstant.svg?branch=master)](https://travis-ci.org/nadako/hxfbinstant)
+
 Simple as this. Import `fbinstant.FBInstant` and use.
 
 ## Documentation

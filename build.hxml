@@ -1,0 +1,3 @@
+--macro include("fbinstant")
+--js out.js
+--no-output

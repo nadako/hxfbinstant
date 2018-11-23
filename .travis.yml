@@ -1,0 +1,7 @@
+dist: trusty
+language: haxe
+sudo: false
+haxe:
+ - development
+script:
+ - haxe build.hxml
