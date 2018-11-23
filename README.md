@@ -4,6 +4,8 @@
 
 Simple as this. Import `fbinstant.FBInstant` and use.
 
+Currently requires latest Haxe 4 (preview 5 and above), because that's what I use, although we can make it work with 3.4. :)
+
 ## Documentation
 
  * Official docs: https://developers.facebook.com/docs/games/instant-games/sdk
