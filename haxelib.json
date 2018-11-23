@@ -1,0 +1,10 @@
+{
+	"name": "hxfbinstant",
+	"description": "Facebook Instant Games SDK (FBInstant) externs for Haxe",
+	"url": "https://github.com/nadako/hxfbinstant",
+	"contributors": ["nadako"],
+	"license": "MIT",
+	"tags": ["extern", "js", "javascript", "web", "game", "html5"],
+	"version": "6.2.0",
+	"releasenote": "Initial release for version 6.2"
+}
