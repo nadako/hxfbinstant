@@ -6,3 +6,16 @@ haxe:
  - development
 script:
  - haxe build.hxml
+
+before_deploy:
+ - haxelib git dox https://github.com/HaxeFoundation/dox
+ - haxe doc.hxml
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  local-dir: doc/out
+  on:
+    branch: master
+    haxe: 3.4.7

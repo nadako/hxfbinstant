@@ -10,17 +10,17 @@ extern class FBInstant {
 	/**
 		Contains functions and properties related to the current player.
 	**/
-	static var player(default,never):Player;
+	static var player(default,never):FBInstantPlayer;
 
 	/**
 		Contains functions and properties related to the current game context.
 	**/
-	static var context(default,never):Context;
+	static var context(default,never):FBInstantContext;
 
 	/**
 		Contains functions and properties related to payments and purchases of game products.
 	**/
-	static var payments(default,never):Payments;
+	static var payments(default,never):FBInstantPayments;
 
 	/**
 		The current locale. See https://origincache.facebook.com/developers/resources/?id=FacebookLocales.xml for a complete list of supported locale values.
@@ -196,8 +196,10 @@ extern class FBInstant {
 
 /**
 	Contains functions and properties related to the current player.
+
+	Accessible via `FBInstant.player` property.
 **/
-private extern class Player {
+extern class FBInstantPlayer {
 	/**
 		A unique identifier for the player. A Facebook user's player ID will remain constant, and is scoped to a specific game.
 		This means that different games will have different player IDs for the same user.
@@ -292,8 +294,10 @@ private extern class Player {
 
 /**
 	Contains functions and properties related to the current game context.
+
+	Accessible via `FBInstant.context` property.
 **/
-private extern class Context {
+extern class FBInstantContext {
 	/**
 		A unique identifier for the current game context.
 		This represents a specific context that the game is being played in (for example, a particular messenger conversation or facebook post).
@@ -367,8 +371,10 @@ typedef ContextChooseAsyncOptions = {
 
 /**
 	Contains functions and properties related to payments and purchases of game products.
+
+	Accessible via `FBInstant.payments` property.
 **/
-private extern class Payments {
+extern class FBInstantPayments {
 	/**
 		Fetches the game's product catalog.
 	**/

@@ -1,0 +1,9 @@
+-js dummy
+-D doc-gen
+--macro include("fbinstant")
+--no-output
+-xml doc/js.xml
+
+--next
+
+-cmd haxelib run dox -o doc/out -i doc --title "Facebook Instant Games SDK externs for Haxe" --toplevel-package fbinstant -D source-path https://github.com/nadako/hxfbinstant/blob/master/

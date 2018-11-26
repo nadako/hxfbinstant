@@ -9,7 +9,7 @@ API version: **6.2**
 ## Documentation
 
  * Official docs: https://developers.facebook.com/docs/games/instant-games/sdk
- * Generated Haxe API docs: coming soon
+ * Generated Haxe API docs: https://nadako.github.io/hxfbinstant/fbinstant/FBInstant.html
 
 ## Extra functionality for signed data
 
