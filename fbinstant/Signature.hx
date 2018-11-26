@@ -2,6 +2,8 @@ package fbinstant;
 
 /**
 	Encoded signature returned by `SignedPlayerInfo.getSignature`.
+
+	The result of decoding this signature is `DecodedSignature`.
 **/
 typedef Signature = OAuth20Signature<DecodedSignature>;
 

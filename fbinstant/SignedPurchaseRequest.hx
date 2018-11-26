@@ -2,6 +2,8 @@ package fbinstant;
 
 /**
 	Encoded signed purchase request provided by `Purchase.signedRequest`.
+
+	The result of decoding this signature is `DecodedSignedPurchaseRequest`.
 **/
 typedef SignedPurchaseRequest = OAuth20Signature<DecodedSignedPurchaseRequest>;
 

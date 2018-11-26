@@ -245,11 +245,16 @@ extern class FBInstantPlayer {
 
 	/**
 		Retrieve data from the designated cloud storage of the current player.
+
+		@param keys An array of unique keys to retrieve data for.
 	**/
 	function getDataAsync(keys:Array<String>):Promise<DynamicAccess<Dynamic>>;
 
 	/**
 		Retrieve data from the designated cloud storage of the current player.
+
+		@param data An object containing a set of key-value pairs that should be persisted to cloud storage.
+		            The object must contain only serializable values - any non-serializable values will cause the entire modification to be rejected.
 	**/
 	function setDataAsync(data:DynamicAccess<Dynamic>):Promise<Void>;
 
