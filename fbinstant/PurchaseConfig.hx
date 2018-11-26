@@ -12,5 +12,5 @@ typedef PurchaseConfig = {
 	/**
 		An optional developer-specified payload, to be included in the returned purchase's signed request.
 	**/
-	var ?developerPayload:String;
+	@:optional var developerPayload:String;
 }

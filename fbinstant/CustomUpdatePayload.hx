@@ -1,6 +1,12 @@
 package fbinstant;
 
-typedef CustomUpdatePayload = UpdatePayload<CustomUpdatePayload> & {
+typedef CustomUpdatePayload =
+#if (haxe_ver >= 4)
+UpdatePayload<CustomUpdatePayload> & {
+#else
+{>UpdatePayload<CustomUpdatePayload>,
+#end
+
 	/**
 		ID of the template this custom update is using.
 		Templates should be predefined in `fbapp-config.json`.
@@ -15,7 +21,7 @@ typedef CustomUpdatePayload = UpdatePayload<CustomUpdatePayload> & {
 		pass an object with the default cta as the value of 'default'
 		and another object mapping locale keys to translations as the value of 'localizations'.
 	**/
-	var ?cta:StringOrLocalizableContent;
+	@:optional var cta:StringOrLocalizableContent;
 
 	/**
 		Data URL of a base64 encoded image.
@@ -33,12 +39,12 @@ typedef CustomUpdatePayload = UpdatePayload<CustomUpdatePayload> & {
 		All game sessions launched from the update will be able to access this blob through `FBInstant.getEntryPointData()`.
 		Must be less than or equal to 1000 characters when stringified.
 	**/
-	var ?data:{};
+	@:optional var data:{};
 
 	/**
 		Specifies how the update should be delivered. If no strategy is specified, we default to 'IMMEDIATE'.
 	**/
-	var ?strategy:CustomUpdatePayloadStrategy;
+	@:optional var strategy:CustomUpdatePayloadStrategy;
 
 	/**
 		Specifies notification setting for the custom update. Defaults to 'NO_PUSH'.
@@ -46,27 +52,27 @@ typedef CustomUpdatePayload = UpdatePayload<CustomUpdatePayload> & {
 		Use push notification only for updates that are high-signal and immediately actionable for the recipients.
 		Also note that push notification is not always guaranteed, depending on user setting and platform policies.
 	**/
-	var ?notification:CustomUpdatePayloadNotification;
+	@:optional var notification:CustomUpdatePayloadNotification;
 }
 
-enum abstract CustomUpdatePayloadStrategy(String) {
+@:enum abstract CustomUpdatePayloadStrategy(String) {
 	/**
 		The update should be posted immediately.
 	**/
-	var IMMEDIATE;
+	var IMMEDIATE = "IMMEDIATE";
 
 	/**
 		The update should be posted when the game session ends. The most recent update sent using the 'LAST' strategy will be the one sent.
 	**/
-	var LAST;
+	var LAST = "LAST";
 
 	/**
 		The update is posted immediately, and clears any other pending updates (such as those sent with the 'LAST' strategy).
 	**/
-	var IMMEDIATE_CLEAR;
+	var IMMEDIATE_CLEAR = "IMMEDIATE_CLEAR";
 }
 
-enum abstract CustomUpdatePayloadNotification(String) {
-	var NO_PUSH;
-	var PUSH;
+@:enum abstract CustomUpdatePayloadNotification(String) {
+	var NO_PUSH = "NO_PUSH";
+	var PUSH = "PUSH";
 }

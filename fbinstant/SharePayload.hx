@@ -23,5 +23,5 @@ typedef SharePayload = {
 		A blob of data to attach to the share.
 		All game sessions launched from the share will be able to access this blob through `FBInstant.getEntryPointData()`.
 	**/
-	var ?data:{};
+	@:optional var data:{};
 }

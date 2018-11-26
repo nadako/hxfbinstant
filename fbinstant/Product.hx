@@ -7,30 +7,30 @@ typedef Product = {
 	/**
 		The title of the product
 	**/
-	final title:String;
+	var title(default,never):String;
 
 	/**
 		The product's game-specified identifier
 	**/
-	final productID:String;
+	var productID(default,never):String;
 
 	/**
 		The product descriptio
 	**/
-	final ?description:String;
+	@:optional var description(default,never):String;
 
 	/**
 		A link to the product's associated image
 	**/
-	final ?imageURI:String;
+	@:optional var imageURI(default,never):String;
 
 	/**
 		The price of the product
 	**/
-	final price:String;
+	var price(default,never):String;
 
 	/**
 		The currency code for the product
 	**/
-	final priceCurrencyCode:String;
+	var priceCurrencyCode(default,never):String;
 }

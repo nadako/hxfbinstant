@@ -7,7 +7,7 @@ import haxe.Json;
 using StringTools;
 
 abstract OAuth20Signature<T:{}>(String) {
-	static final hmac = new Hmac(SHA256);
+	static var hmac(default,never) = new Hmac(SHA256);
 
 	public function asString() return this;
 

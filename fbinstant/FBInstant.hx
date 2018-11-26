@@ -10,17 +10,17 @@ extern class FBInstant {
 	/**
 		Contains functions and properties related to the current player.
 	**/
-	static final player:Player;
+	static var player(default,never):Player;
 
 	/**
 		Contains functions and properties related to the current game context.
 	**/
-	static final context:Context;
+	static var context(default,never):Context;
 
 	/**
 		Contains functions and properties related to payments and purchases of game products.
 	**/
-	static final payments:Payments;
+	static var payments(default,never):Payments;
 
 	/**
 		The current locale. See https://origincache.facebook.com/developers/resources/?id=FacebookLocales.xml for a complete list of supported locale values.
@@ -150,7 +150,7 @@ extern class FBInstant {
 	/**
 		Set a callback to be fired when a pause event is triggered.
 	**/
-	static function onPause(func:()->Void):Void;
+	static function onPause(func:Void->Void):Void;
 
 	/**
 		Attempt to create an instance of interstitial ad. This instance can then be preloaded and presented.
@@ -352,17 +352,17 @@ typedef ContextChooseAsyncOptions = {
 	/**
 		The set of filters to apply to the context suggestions.
 	**/
-	var ?filters:Array<ContextFilter>;
+	@:optional var filters:Array<ContextFilter>;
 
 	/**
 		The maximum number of participants that a suggested context should ideally have.
 	**/
-	var ?maxSize:Int;
+	@:optional var maxSize:Int;
 
 	/**
 		The minimum number of participants that a suggested context should ideally have.
 	**/
-	var ?minSize:Int;
+	@:optional var minSize:Int;
 }
 
 /**
@@ -397,5 +397,5 @@ private extern class Payments {
 	/**
 		Sets a callback to be triggered when `Payments` operations are available.
 	**/
-	function onReady(callback:()->Void):Void;
+	function onReady(callback:Void->Void):Void;
 }

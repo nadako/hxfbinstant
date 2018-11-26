@@ -7,29 +7,29 @@ typedef Purchase = {
 	/**
 		A developer-specified string, provided during the purchase of the product
 	**/
-	final ?developerPayload:String;
+	@:optional var developerPayload(default,never):String;
 	/**
 		The identifier for the purchase transaction
 	**/
-	final paymentID:String;
+	var paymentID(default,never):String;
 
 	/**
 		The product's game-specified identifier
 	**/
-	final productID:String;
+	var productID(default,never):String;
 
 	/**
 		Unix timestamp of when the purchase occurred
 	**/
-	final purchaseTime:String;
+	var purchaseTime(default,never):String;
 
 	/**
 		A token representing the purchase that may be used to consume the purchase
 	**/
-	final purchaseToken:String;
+	var purchaseToken(default,never):String;
 
 	/**
 		Server-signed encoding of the purchase request
 	**/
-	final signedRequest:SignedPurchaseRequest;
+	var signedRequest(default,never):SignedPurchaseRequest;
 }
